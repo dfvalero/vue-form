@@ -1,17 +1,39 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <par-form :values="values">
+    <div class="super-nested-section">
+      <div>
+        <par-input id="first" />
+      </div>
+    </div>
+    <div class="super-nested-section">
+      <div>
+        <par-input id="second" />
+      </div>
+    </div>
+    <button type="submit">Submit</button>
+  </par-form>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts">
+import { defineComponent } from 'vue';
+import ParForm from './components/ParForm.vue';
+import ParInput from './components/ParInput.vue';
 
-export default {
+export default defineComponent({
   name: 'App',
   components: {
-    HelloWorld
+    ParForm,
+    ParInput
+  },
+  data() {
+    return {
+      values: {
+        first: '1',
+        second: ''
+      }
+    }
   }
-}
+});
 </script>
 
 <style>
