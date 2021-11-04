@@ -10,6 +10,11 @@
         <par-input id="second" />
       </div>
     </div>
+    <div class="super-nested-section">
+      <div>
+        <par-checkbox id="third" />
+      </div>
+    </div>
     <button type="submit">Submit</button>
   </par-form>
 </template>
@@ -18,18 +23,21 @@
 import { defineComponent } from 'vue';
 import ParForm from './components/ParForm.vue';
 import ParInput from './components/ParInput.vue';
+import ParCheckbox from './components/ParCheckbox.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
     ParForm,
-    ParInput
+    ParInput,
+    ParCheckbox
   },
   data() {
     return {
       values: {
         first: '1',
-        second: ''
+        second: '',
+        third: true
       }
     }
   }
